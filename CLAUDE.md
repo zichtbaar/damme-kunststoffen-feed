@@ -179,10 +179,17 @@ Zelfde structuur als kaartenenatlassen.nl tool. Tabs:
 - **Accubakken:** 58 producten (`custom_label_1 = accubak`)
 
 ### 🔄 Volgende stap
-- `app.py` bouwen (Streamlit UI, 4 tabs)
-- Feed uploaden naar Channable / Google Merchant Center
+- Feed instellen in Google Merchant Center (URL hieronder)
 - 545 NOT_ELIGIBLE producten in Merchant Center oplossen (feed-issue)
 - Aparte Shopping campagne aanmaken voor accubakken (`custom_label_1 = accubak`)
+
+## Live feed (GitHub Pages)
+
+- **Repo:** https://github.com/zichtbaar/damme-kunststoffen-feed
+- **Feed URL:** https://zichtbaar.github.io/damme-kunststoffen-feed/google_shopping_feed.xml
+- **Refresh:** dagelijks 06:00 NL-tijd via GitHub Actions (+ handmatig via Actions tab)
+- **Workflow:** `.github/workflows/refresh_feed.yml`
+- `server_refresh.py` downloadt live feed → transformeert → commit terug naar `docs/`
 
 ### 💡 Toekomstige ideeën
 - Claude API-koppeling voor automatisch genereren van titels/beschrijvingen via LLM
