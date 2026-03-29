@@ -1,0 +1,35 @@
+name: Refresh Google Shopping Feed
+
+on:
+  schedule:
+    - cron: '0 5 * * *'   # elke dag 06:00 Nederlandse tijd (UTC+1)
+  workflow_dispatch:        # ook handmatig te starten via GitHub
+
+permissions:
+  contents: write           # nodig om feed terug te committen
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Python instellen
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Feed downloaden en transformeren
+        run: |
+          mkdir -p input docs
+          python3 server_refresh.py
+
+      - name: Feed committen naar repo (GitHub Pages)
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/google_shopping_feed.xml
+          git diff --cached --quiet || git commit -m "chore: feed refresh $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git push

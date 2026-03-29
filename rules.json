@@ -1,0 +1,60 @@
+{
+  "category_order": [
+    "septictank",
+    "afscheider",
+    "brandstoftank",
+    "watertank",
+    "accubak",
+    "lekbak",
+    "opslagtank",
+    "plexiglas",
+    "materiaal",
+    "jerrycan"
+  ],
+  "category_keywords": {
+    "septictank":    ["septic", "septictank", "iba", "riool"],
+    "afscheider":    ["afscheider", "vetafscheider", "olieafscheider"],
+    "brandstoftank": ["brandstof", "diesel", "adblue", "mazout"],
+    "watertank":     ["watertank", "drinkwater", "regenwater"],
+    "accubak":       ["accubak"],
+    "lekbak":        ["lekbak", "opvangbak"],
+    "opslagtank":    ["opslagtank"],
+    "plexiglas":     ["plexiglas", "acrylaat", "pmma"],
+    "materiaal":     ["plaat", "buis", "staaf", "materialen"],
+    "jerrycan":      ["jerrycan", "vat", "drum"]
+  },
+  "google_product_category": {
+    "septictank":    "111",
+    "afscheider":    "111",
+    "brandstoftank": "111",
+    "watertank":     "111",
+    "accubak":       "111",
+    "lekbak":        "111",
+    "opslagtank":    "111",
+    "plexiglas":     "632",
+    "materiaal":     "632",
+    "jerrycan":      "111",
+    "overig":        "111"
+  },
+  "description_fallbacks": {
+    "septictank":    "Septictank van Damme Kunststoffen. Robuust en duurzaam, geschikt voor ondergrondse installatie. Bestel direct online of vraag een vrijblijvende offerte aan.",
+    "afscheider":    "Afscheider van Damme Kunststoffen. Betrouwbare scheiding van vet, olie of andere vloeistoffen. Op maat leverbaar — vraag naar de mogelijkheden.",
+    "brandstoftank": "Brandstoftank van Damme Kunststoffen. Veilige en duurzame opslag van diesel, adblue of mazout. Diverse capaciteiten leverbaar.",
+    "watertank":     "Watertank van Damme Kunststoffen. Ideaal voor opslag van drinkwater of regenwater. Onderhoudsvriendelijk en duurzaam.",
+    "accubak":       "Accubak van Damme Kunststoffen. HDPE kunststof opvangbak voor accu's en batterijen. Diverse maten beschikbaar, met of zonder deksel. Chemisch bestendig en volledig waterdicht.",
+    "lekbak":        "Lekbak van Damme Kunststoffen. Effectieve opvang van lekkages en morsvloeistoffen. Diverse maten beschikbaar.",
+    "opslagtank":    "Opslagtank van Damme Kunststoffen. Robuuste opslag voor diverse vloeistoffen. Vraag naar de mogelijkheden voor maatwerk.",
+    "plexiglas":     "Plexiglas van Damme Kunststoffen. Hoogwaardig acrylaat voor diverse toepassingen. Op maat zagen en leveren.",
+    "materiaal":     "Kunststof materiaal van Damme Kunststoffen. Diverse soorten platen, buizen en staven. Op maat zagen en leveren.",
+    "jerrycan":      "Jerrycan of vat van Damme Kunststoffen. Veilige opslag en transport van vloeistoffen. Diverse capaciteiten beschikbaar.",
+    "overig":        "Product van Damme Kunststoffen. Specialist in kunststof tanks, bakken, plexiglas en afscheidertechniek. Vraag naar de mogelijkheden."
+  },
+  "google_shopping": {
+    "brand":           "Damme Kunststoffen",
+    "condition":       "new",
+    "identifier_exists": "false",
+    "feed_title":      "Damme Kunststoffen — Google Shopping Feed",
+    "channel_link":    "https://www.dammekunststoffenwebshop.nl",
+    "feed_description": "Google Shopping feed van Damme Kunststoffen B.V. — specialist in kunststof tanks, bakken, plexiglas en afscheidertechniek."
+  }
+}
