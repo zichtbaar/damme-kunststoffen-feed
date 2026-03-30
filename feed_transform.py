@@ -64,11 +64,14 @@ def is_maatwerk(name, categories):
     return "op maat" in text
 
 
-def determine_category(name, categories, rules):
+def determine_category(name, categories, rules, product_id=None):
     """
     Bepaal custom_label_1 op basis van naam + categories.
-    Prioriteitsvolgorde: stop bij eerste match.
+    Prioriteitsvolgorde: product_id override → keyword match → overig.
     """
+    overrides = rules.get("category_overrides", {})
+    if product_id and product_id in overrides:
+        return overrides[product_id]
     text = (name + " " + categories).lower()
     order    = rules.get("category_order", [])
     keywords = rules.get("category_keywords", {})
@@ -172,7 +175,7 @@ def build_pipeline(item, rules):
             "before": None, "after": None, "status": "excluded",
         })
         # Labels nog steeds berekenen voor overzicht
-        cat   = determine_category(name, categories, rules)
+        cat   = determine_category(name, categories, rules, product_id=sku)
         cl0   = "op_aanvraag"
         cl1   = cat
         cl2   = "maatwerk" if maatwerk else "standaard"
@@ -209,7 +212,7 @@ def build_pipeline(item, rules):
     })
 
     # ── Stap 3: Categorie ──────────────────────────────────────────────────
-    cat = determine_category(name, categories, rules)
+    cat = determine_category(name, categories, rules, product_id=sku)
     steps.append({
         "nr": 3, "label": "Categorie", "type": "field",
         "condition": f"Keyword-match in naam/categories",

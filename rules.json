@@ -1,4 +1,12 @@
 {
+  "category_overrides": {
+    "DS7783-4":    "overig",
+    "SEP schacht 25": "overig",
+    "SEP schacht 50": "overig",
+    "DS7780":      "overig",
+    "DS7785":      "overig",
+    "DS7782":      "overig"
+  },
   "category_order": [
     "septictank",
     "afscheider",
@@ -12,7 +20,7 @@
     "jerrycan"
   ],
   "category_keywords": {
-    "septictank":    ["septic", "septictank", "iba", "riool"],
+    "septictank":    ["septictank", "septic tank", "iba", "riool"],
     "afscheider":    ["afscheider", "vetafscheider", "olieafscheider"],
     "brandstoftank": ["brandstof", "diesel", "adblue", "mazout"],
     "watertank":     ["watertank", "drinkwater", "regenwater"],
