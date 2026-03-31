@@ -17,11 +17,21 @@ RULES_PATH = os.path.join(os.path.dirname(__file__), "rules.json")
 OUTPUT_DIR = os.path.join(os.path.dirname(__file__), "docs")
 OUTPUT     = os.path.join(OUTPUT_DIR, "google_shopping_feed.xml")
 
+HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (compatible; Googlebot/2.1; "
+        "+http://www.google.com/bot.html)"
+    )
+}
+
 def main():
     print("Feed downloaden...")
     os.makedirs("input", exist_ok=True)
     os.makedirs(OUTPUT_DIR, exist_ok=True)
-    urllib.request.urlretrieve(FEED_URL, "input/feed.xml")
+    req = urllib.request.Request(FEED_URL, headers=HEADERS)
+    with urllib.request.urlopen(req) as response:
+        with open("input/feed.xml", "wb") as f:
+            f.write(response.read())
 
     print("Regels laden...")
     with open(RULES_PATH) as f:
