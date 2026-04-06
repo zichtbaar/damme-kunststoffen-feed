@@ -24,7 +24,11 @@ jobs:
       - name: Feed downloaden en transformeren
         run: |
           mkdir -p input docs
-          python3 server_refresh.py
+          for i in 1 2 3; do
+            python3 server_refresh.py && break
+            echo "Poging $i mislukt, opnieuw proberen in 15 seconden..."
+            sleep 15
+          done
 
       - name: Feed committen naar repo (GitHub Pages)
         run: |
